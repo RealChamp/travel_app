@@ -84,6 +84,37 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _currentTab,
+          onTap: (int value) {
+            setState(() {
+              _currentTab = value;
+            });
+          },
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.search,
+                size: 30.0,
+              ),
+              title: SizedBox.shrink(),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.account_balance_wallet,
+                size: 30.0,
+              ),
+              title: SizedBox.shrink(),
+            ),
+            BottomNavigationBarItem(
+              icon: CircleAvatar(
+                radius: 18.0,
+                backgroundImage: NetworkImage(
+                    'https://randomuser.me/api/portraits/women/44.jpg'),
+              ),
+              title: SizedBox.shrink(),
+            ),
+          ]),
     );
   }
 }
